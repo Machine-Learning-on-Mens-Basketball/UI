@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "MLMB",
+  "version": "2.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -39,5 +39,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "Machine Learning on Men's Basketball",
+  "main": "index.tsx",
+  "repository": "https://github.com/Machine-Learning-on-Mens-Basketball/UI.git",
+  "author": "Michael Taylor & MLMB Family <3",
+  "license": "Proprietary",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.24.0",
+    "jest": "^27.0.6",
+    "prettier": "2.3.2"
   }
 }
