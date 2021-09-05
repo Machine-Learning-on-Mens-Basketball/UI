@@ -38,20 +38,31 @@
 .logo {
   font-family: "Legacy Regular";
   color: white;
-  font-size: 7.5rem;
-  letter-spacing: -0.3rem;
+  font-size: clamp(3.75rem, 7.5vmin, 7.5rem);
+  letter-spacing: clamp(-0.15rem, -0.3vmin, -0.3rem);
 }
 
 .badge {
-  margin: 2rem;
-  padding-top: 4rem;
-  padding-left: 2rem;
+  margin: 4rem;
+  padding-top: clamp(2rem, 4vmin, 4rem);
+  padding-left: clamp(1rem, 2vmin, 2rem);
   justify-content: center;
   align-items: center;
-  width: 20rem;
-  height: 20rem;
+  width: clamp(10rem, 20vmin, 20rem);
+  height: clamp(10rem, 20vmin, 20rem);
   border-radius: 100%;
   text-align: center;
   display: flex;
   background-color: #fa8320;
+}
+
+hr {
+  width: 80%;
+  background-color: #966f33;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -4rem;
+  height: clamp(0.125rem, 0.25vmin, 0.25rem);
+  border-width: clamp(0.25rem, 0.5vmin, 0.5rem);
+  border-color: #966f33;
 }

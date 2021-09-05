@@ -6,10 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="badge">
+        <div className="badge animate-bounce">
           <h1 className="logo">MLMB</h1>
-          {/* <p className="logo-sub">Machine Learning on Men&apos;s Basketball</p> */}
         </div>
+        <hr />
+        <code>Machine Learning on Men&apos;s Basketball</code>
         {/* <img
           src={logo}
           className="w-64 h-64 bg-white invert border border-8 rounded-md animate-bounce"
