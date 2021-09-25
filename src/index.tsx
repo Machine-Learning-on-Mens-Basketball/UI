@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./fonts/Legacy Regular/Legacy Regular.ttf";
+import Home from "./components/Home";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <Home />
   </React.StrictMode>,
   document.getElementById("root")
 );

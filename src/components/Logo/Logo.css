@@ -1,0 +1,20 @@
+.logo {
+  font-family: "Legacy Regular";
+  color: white;
+  font-size: clamp(3.75rem, 7.5vmin, 7.5rem);
+  letter-spacing: clamp(-0.15rem, -0.3vmin, -0.3rem);
+}
+
+.badge {
+  margin: 4rem;
+  padding-top: clamp(2rem, 4vmin, 4rem);
+  padding-left: clamp(1rem, 2vmin, 2rem);
+  justify-content: center;
+  align-items: center;
+  width: clamp(10rem, 20vmin, 20rem);
+  height: clamp(10rem, 20vmin, 20rem);
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  background-color: #fa8320;
+}

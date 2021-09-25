@@ -1,15 +1,17 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Logo from "./components/Logo/Logo";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="badge animate-bounce">
+        {/* <div className="badge animate-bounce">
           <h1 className="logo">MLMB</h1>
         </div>
-        <hr />
+        <hr /> */}
+        <Logo />
         <code>Machine Learning on Men&apos;s Basketball</code>
         {/* <img
           src={logo}
