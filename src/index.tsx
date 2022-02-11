@@ -1,15 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./fonts/Legacy Regular/Legacy Regular.ttf";
 import Home from "./components/Home";
+import Prediction from "./components/Prediction";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Home />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/predict">
+          <Prediction />
+        </Route>
+        <Route exact path="*">
+          <Home />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

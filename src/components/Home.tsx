@@ -1,19 +1,9 @@
 import React from "react";
+import { FullName } from "./Logos/FullName";
 
 export const Home: React.FC = (): JSX.Element => (
   <>
-    <h1
-      className="mt-16 text-5xl text-center md:text-7xl"
-      style={{
-        fontFamily: "Legacy Regular",
-        color: "#f57c00",
-        whiteSpace: "nowrap",
-      }}
-    >
-      Machine Learning <br />{" "}
-      <span className="text-4xl text-blue-700 md:text-6xl">on </span>
-      Men&apos;s Basketball
-    </h1>
+    <FullName />
     <h3 className="text-center text-gray-500 mb-24 text-lg md:text-2xl">
       Accelerated by innovation
     </h3>
