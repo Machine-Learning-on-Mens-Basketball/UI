@@ -1,27 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import { MLMB } from "./components/MLMB";
 import reportWebVitals from "./reportWebVitals";
-import "./fonts/Legacy Regular/Legacy Regular.ttf";
-import Home from "./components/Home";
-import Prediction from "./components/Prediction";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { initializeIcons } from "@fluentui/react/lib/Icons";
+import { Provider } from "./components/Provider";
+
+initializeIcons(/* optional base url */);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/predict">
-          <Prediction />
-        </Route>
-        <Route exact path="*">
-          <Home />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <Provider>
+      <MLMB />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
