@@ -8,18 +8,18 @@ import {
 } from "@fluentui/react-context-selector";
 
 interface ContextValue {
-  menuOpen?: boolean;
-  toggleMenu?: () => void;
+  menuOpen: boolean;
+  toggleMenu: () => void;
 
-  panelOpen?: boolean;
-  togglePanel?: () => void;
-  panelContext?: "settings" | "help" | "feedback";
-  setPanelContext?: () => void;
+  panelOpen: boolean;
+  togglePanel: (panelView?: ContextValue["panelContext"]) => void;
+
+  panelContext: "settings" | "help" | "feedback" | "";
 }
 
 // 💡 The same syntax as native React context API
 //    https://reactjs.org/docs/context.html#reactcreatecontext
-const Context = createContext<ContextValue>({});
+const Context = createContext<ContextValue>({} as any);
 
 const AppProvider = Context.Provider;
 
@@ -28,9 +28,23 @@ export const useAppContext = <T,>(selector: ContextSelector<ContextValue, T>) =>
   useContextSelector(Context, selector);
 
 export const Provider: React.FC = ({ children }) => {
+  const [panelContext, setPanelContext] =
+    React.useState<ContextValue["panelContext"]>("");
   const [menuOpen, { toggle: toggleMenu }] = useBoolean(false);
   const [panelOpen, { toggle: togglePanel }] = useBoolean(false);
-  console.log(panelOpen);
+
+  const togglePanelWithContext = (
+    panelView: ContextValue["panelContext"] = ""
+  ) => {
+    if (panelView !== "") {
+      setPanelContext(panelView);
+      if (panelOpen && panelContext === panelView) togglePanel();
+      else if (!panelOpen) togglePanel();
+    } else {
+      panelOpen && setPanelContext("");
+      togglePanel();
+    }
+  };
 
   return (
     <div className="App">
@@ -38,8 +52,9 @@ export const Provider: React.FC = ({ children }) => {
         value={{
           menuOpen,
           panelOpen,
+          panelContext,
           toggleMenu,
-          togglePanel,
+          togglePanel: togglePanelWithContext,
         }}
       >
         {children}

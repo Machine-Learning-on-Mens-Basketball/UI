@@ -14,11 +14,30 @@ export const Header: React.FC = () => {
   const _titleStyle = headerTitleButtonStyles(theme);
 
   const panelOpen = useAppContext((context) => context.panelOpen);
+  const panelContext = useAppContext((context) => context.panelContext);
 
   const toggleMenu = useAppContext((context) => context.toggleMenu);
-  const togglePanel = useAppContext(
-    (context) => context.togglePanel
-  ) as () => void;
+  const togglePanel = useAppContext((context) => context.togglePanel);
+
+  const getPanelHeader = () => {
+    let panelHeader: string;
+    switch (panelContext) {
+      case "feedback":
+        panelHeader = "Send feedback to MLMB";
+        break;
+      case "help":
+        panelHeader = "Support + troubleshooting";
+        break;
+      case "settings":
+        panelHeader = "MLMB settings";
+        break;
+      default:
+        panelHeader = "";
+    }
+    return panelHeader;
+  };
+
+  const _panelHeader = getPanelHeader();
 
   const _items: ICommandBarItemProps[] = React.useMemo(
     () => [
@@ -38,7 +57,7 @@ export const Header: React.FC = () => {
         iconProps: {
           iconName: "CollegeHoops",
         },
-        text: "MLMB",
+        text: "| MLMB",
       },
     ],
     [toggleMenu]
@@ -54,7 +73,7 @@ export const Header: React.FC = () => {
         iconProps: {
           iconName: "Settings",
         },
-        onClick: togglePanel,
+        onClick: () => togglePanel("settings"),
       },
       {
         key: "help",
@@ -64,7 +83,7 @@ export const Header: React.FC = () => {
         iconProps: {
           iconName: "Help",
         },
-        onClick: togglePanel,
+        onClick: () => togglePanel("help"),
       },
       {
         key: "feedback",
@@ -74,7 +93,7 @@ export const Header: React.FC = () => {
         iconProps: {
           iconName: "Feedback",
         },
-        onClick: () => togglePanel(),
+        onClick: () => togglePanel("feedback"),
       },
     ],
     [togglePanel]
@@ -88,10 +107,10 @@ export const Header: React.FC = () => {
         styles={{ root: { backgroundColor: theme.palette.orangeLighter } }}
       />
       <Panel
-        headerText={"Panel"}
+        headerText={_panelHeader}
         isOpen={panelOpen}
         isBlocking={false}
-        onDismiss={togglePanel}
+        onDismiss={() => togglePanel()}
         closeButtonAriaLabel={"Close"}
         styles={{ root: { top: 45 } }}
       >
