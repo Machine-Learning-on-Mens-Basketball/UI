@@ -1,9 +1,13 @@
 import * as React from "react";
 import { Header } from "./Header";
-import { getTheme } from "@fluentui/react";
-import { mergeStyles } from "@fluentui/merge-styles";
-import { Stack, IStackProps } from "@fluentui/react/lib/Stack";
-import { INavLinkGroup, Nav } from "@fluentui/react";
+import {
+  getTheme,
+  mergeStyles,
+  Stack,
+  IStackProps,
+  INavLinkGroup,
+  Nav,
+} from "@fluentui/react";
 import { navStyles } from "../shared/Typography";
 import { useAppContext } from "./Provider";
 import { PredictionList } from "./PredictionList";

@@ -61,12 +61,14 @@
   "author": "Michael Taylor & MLMB Family <3",
   "license": "Proprietary",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
     "@fluentui/eslint-plugin": "^1.6.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.24.0",
-    "prettier": "2.3.2"
+    "prettier": "2.3.2",
+    "ts-jest": "^26.0.24"
   }
 }
