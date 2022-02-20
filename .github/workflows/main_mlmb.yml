@@ -30,11 +30,11 @@ jobs:
           node-version: "16.x"
           cache: yarn
 
-      - name: npm install, build, and test
+      - name: yarn install, build, and test
         run: |
           yarn
-          yarn run build --if-present
-          yarn run test --if-present
+          yarn run build
+          yarn jest
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
