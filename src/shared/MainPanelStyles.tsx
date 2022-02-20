@@ -1,4 +1,4 @@
-import { mergeStyles } from "@fluentui/merge-styles";
+import { mergeStyles } from "@fluentui/react";
 
 export const MainPanelNumericalWidth = 1100;
 export const MainPanelWidth = `${MainPanelNumericalWidth}px`;
