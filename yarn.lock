@@ -1279,7 +1279,7 @@
 
 "@fluentui/react@^8.55.3":
   version "8.55.3"
-  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-8.55.3.tgz#d4811715631a391f18419367ec33303e926fc0a1"
+  resolved "https://registry.npmjs.org/@fluentui/react/-/react-8.55.3.tgz"
   integrity sha512-NPw6AUHZcgS1mVRf3MCo0Eg7Ey77ZymLOTt2gMECKJaKnIlJcYbK5QWxxdKuIx+cNx8ilTEAJ+HJqoYEk9bWNg==
   dependencies:
     "@fluentui/date-time-utilities" "^8.3.0"
